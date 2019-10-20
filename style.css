@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
+:root {
+  --black: #0b0c10;
+  --dark: #1f2833;
+  --gray: #c5c6c7;
+  --tur: #66fcf1;
+  --darkTur: #45a29e;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -17,12 +25,13 @@ button {
 }
 
 .header {
-  background-color: #1f2833;
+  background-color: var(--dark);
   text-align: center;
   padding: 25px 0;
   word-spacing: 0.2em;
   font-size: 1.2em;
-  color: #66fcf1;
+  color: var(--tur);
+  width: 100%;
 }
 
 .visualizer {
@@ -35,7 +44,11 @@ button {
 .array {
   min-height: 350px;
   width: 100%;
-  background-color: #1f2833;
+  background-color: var(--dark);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttons {
@@ -46,9 +59,9 @@ button {
 }
 
 .buttons .generate-array #generate {
-  background-color: #1f2833;
+  background-color: var(--dark);
   font-size: 18px;
-  color: #66fcf1;
+  color: var(--tur);
   border-radius: 40px;
   margin-right: 20px;
 }
@@ -65,13 +78,29 @@ button {
 }
 
 .buttons .search-bar #search-btn {
-  background-color: #1f2833;
+  background-color: var(--dark);
   font-size: 18px;
-  color: #66fcf1;
+  color: var(--tur);
   border-radius: 40px;
   height: 45px;
   width: 45px;
   padding: 0;
   position: relative;
   right: 55px;
+}
+
+/* Array element styling */
+.element {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  color: var(--dark);
+  font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
 }
