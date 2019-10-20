@@ -54,13 +54,4 @@ generate.addEventListener("click", () => {
   let randomArr = generateRandomArray();
   insertArray(randomArr);
   addArrows();
-
-  setTimeout(() => {
-    moveArrow();
-  }, 1000);
 });
-
-// function moveArrow() {
-//   const low = document.getElementById("low");
-//   low.style.transform = "translateX(100px)";
-// }
