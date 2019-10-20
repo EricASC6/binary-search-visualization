@@ -1,4 +1,5 @@
-23374d -> dark blue
-1089ff -> blue
-e5e5e5 -> gray
-eeeeee -> white
+0b0c10 -> black
+1f2833 -> dark
+c5c6c7 -> gray
+66fcf1 -> tur
+45a29e -> dark tur
