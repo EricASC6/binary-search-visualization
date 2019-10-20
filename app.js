@@ -34,6 +34,15 @@ const insertArray = arr => {
   return;
 };
 
+const addArrows = () => {
+  let low = `<i class="fas fa-arrow-up" id="low"></i>`;
+  let high = `<i class="fas fa-arrow-up" id="high"></i>`;
+  const array = document.querySelector(".array").children;
+  array[0].innerHTML += low;
+  array[array.length - 1].innerHTML += high;
+  console.log(array[0]);
+};
+
 window.addEventListener("load", () => {
   let randomArr = generateRandomArray();
   insertArray(randomArr);
@@ -44,4 +53,14 @@ const generate = document.getElementById("generate");
 generate.addEventListener("click", () => {
   let randomArr = generateRandomArray();
   insertArray(randomArr);
+  addArrows();
+
+  setTimeout(() => {
+    moveArrow();
+  }, 1000);
 });
+
+// function moveArrow() {
+//   const low = document.getElementById("low");
+//   low.style.transform = "translateX(100px)";
+// }
