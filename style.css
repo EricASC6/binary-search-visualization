@@ -123,7 +123,7 @@ button {
   width: 20px;
   position: absolute;
   font-size: 25px;
-  transition: all 0.3s ease-in;
+  transition: all 1s ease-in;
   bottom: -50px;
   transform-origin: center center;
 }

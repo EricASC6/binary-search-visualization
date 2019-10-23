@@ -1,5 +1,6 @@
 "use strict";
 
+// Function to generate an random array in sorted order
 const generateRandomArray = () => {
   let length = 10;
   let array = [];
@@ -17,6 +18,8 @@ const generateRandomArray = () => {
   return array.sort((a, b) => a - b);
 };
 
+// Function used to insert the randomly generated sorted
+// array onto the DOM
 const insertArray = arr => {
   const array = document.querySelector(".array");
   array.innerHTML = "";
@@ -34,6 +37,7 @@ const insertArray = arr => {
   return;
 };
 
+// Add low and high arrow pointers for Binary Search
 const addArrows = () => {
   let low = `<i class="fas fa-arrow-up" id="low"></i>`;
   let high = `<i class="fas fa-arrow-up" id="high"></i>`;
