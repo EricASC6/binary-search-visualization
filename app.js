@@ -40,12 +40,12 @@ const addArrows = () => {
   const array = document.querySelector(".array").children;
   array[0].innerHTML += low;
   array[array.length - 1].innerHTML += high;
-  console.log(array[0]);
 };
 
 window.addEventListener("load", () => {
   let randomArr = generateRandomArray();
   insertArray(randomArr);
+  addArrows();
 });
 
 const generate = document.getElementById("generate");
