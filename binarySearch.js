@@ -22,21 +22,21 @@ const moveArrow = (arrow, index, targetIndex) => {
   width = parseInt(width.slice(0, width.length - 2));
 
   let currentX = arrow.style.transform ? arrow.style.transform : "0";
-  currentX = currentX.replace(/[^\d.]/g, "");
-  console.log("currentX:" + currentX);
+  currentX = currentX.replace(/[^\d.-]/g, "");
+  // console.log(`currentX of ${arrow.id} = ${currentX}`);
 
   let distance = targetIndex - index;
   let pixels = distance * (2 * margin + width);
   arrow.style.transform = `translateX(${pixels + parseInt(currentX)}px)`;
-  console.log(
-    `${arrow.id} from ${index} to ${targetIndex} travelling ${pixels}px`
-  );
+  // console.log(
+  //   `${arrow.id} from ${index} to ${targetIndex} travelling ${pixels}px`
+  // );
+
+  // console.log(`currentX of ${arrow.id}: ` + (pixels + parseInt(currentX)));
 };
 
 // Search algorithm
-const search = () => {
-  let target = document.querySelector("#target").value;
-  target = parseInt(target);
+const search = target => {
   const array = document.querySelector(".array").children;
 
   let mid = Math.floor((array.length - 1) / 2);
@@ -52,26 +52,28 @@ const search = () => {
       moveArrow(marrow, mid, Math.floor((low + high) / 2));
 
       mid = Math.floor((low + high) / 2);
-      console.log(`Low: ${low},  High: ${high},   Mid: ${mid}`);
+      // console.log(`Low: ${low},  High: ${high},   Mid: ${mid}`);
 
       let midNum = parseInt(arr[mid].innerText);
-      console.log("Middle Num: " + midNum);
+      // console.log("Middle Num: " + midNum);
 
       if (midNum === key) {
-        console.log(`Found ${key} at index ${mid}`);
+        // console.log(`Found ${key} at index ${mid}`);
         return;
       }
 
-      if (midNum > key) {
-        moveArrow(harrow, high, mid - 1);
-        high = mid - 1;
-      } else {
-        moveArrow(larrow, low, mid + 1);
-        low = mid + 1;
-      }
+      setTimeout(() => {
+        if (midNum > key) {
+          moveArrow(harrow, high, mid - 1);
+          high = mid - 1;
+        } else {
+          moveArrow(larrow, low, mid + 1);
+          low = mid + 1;
+        }
 
-      binarySearch(arr, key, low, high);
-    }, 2000);
+        binarySearch(arr, key, low, high);
+      }, 1000);
+    }, 1000);
   };
 
   binarySearch(array, target);
@@ -79,5 +81,7 @@ const search = () => {
 
 const searchBtn = document.getElementById("search-btn");
 searchBtn.addEventListener("click", () => {
-  search();
+  let target = document.querySelector("#target").value;
+  target = parseInt(target);
+  search(target);
 });

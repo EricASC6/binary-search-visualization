@@ -138,4 +138,5 @@ button {
 
 #middle {
   color: #5edfff;
+  z-index: 1;
 }
