@@ -5,7 +5,8 @@
   --dark: #1f2833;
   --gray: #c5c6c7;
   --tur: #66fcf1;
-  --darkTur: #45a29e;
+  --darkTur: #27c1b9;
+  --blue: linear-gradient(135deg, #54b0f1 10%, #0396ff 100%);
 }
 
 * {
@@ -26,17 +27,22 @@ button {
 }
 
 .header {
-  background-color: var(--dark);
+  /* background-image: var(--blue); */
   text-align: center;
   padding: 25px 0;
   word-spacing: 0.2em;
   font-size: 1.2em;
-  color: var(--tur);
+  color: #eeeeee;
+  background-color: #222831;
   width: 100%;
 }
 
+.header .accent {
+  color: #00bbf0;
+}
+
 .visualizer {
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
   min-height: 650px;
   display: grid;
   grid-template-columns: 1fr;
@@ -45,12 +51,43 @@ button {
 .array {
   min-height: 350px;
   width: 100%;
-  background-color: var(--dark);
+  background-color: #eeeeee;
+  /* background-image: white; */
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.array::before {
+  position: absolute;
+  content: "";
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url(http://www.pngmart.com/files/9/Magnifying-Glass-PNG-Clipart.png);
+  background-size: 350px 350px;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  top: 30px;
+  left: 25px;
+}
+
+.array::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  background-image: url(wave.svg);
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+  background-repeat: no-repeat;
 }
 
 .buttons {
@@ -61,10 +98,11 @@ button {
 }
 
 .buttons .generate-array #generate {
-  background-color: var(--dark);
   font-size: 18px;
-  color: var(--tur);
-  border-radius: 40px;
+  color: var(--dark);
+  border-radius: 3px;
+  /* border: 2px solid var(--darkTur); */
+  border: none;
   margin-right: 20px;
 }
 
@@ -96,8 +134,8 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--gray);
-  color: var(--dark);
+  background-image: linear-gradient(135deg, #2afadf 10%, #4c83ff 100%);
+  color: #eeeeee;
   font-size: 16px;
   display: inline-block;
   text-align: center;
@@ -106,6 +144,7 @@ button {
   justify-content: center;
   margin: 0 10px;
   position: relative;
+  font-weight: 600;
 }
 
 .element::after {
@@ -115,28 +154,29 @@ button {
   content: counter(elem);
   z-index: 1;
   bottom: -25px;
-  color: var(--tur);
+  color: var(--dark);
+  font-weight: 700;
 }
 
 .fa-arrow-up {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   position: absolute;
   font-size: 25px;
   transition: all 1s ease-in;
-  bottom: -50px;
+  bottom: -60px;
   transform-origin: center center;
 }
 
 #low {
-  color: #ffd739;
+  color: #222831;
 }
 
 #high {
-  color: #9852f9;
+  color: #00bbf0;
 }
 
 #middle {
-  color: #5edfff;
+  color: #005792;
   z-index: 1;
 }
