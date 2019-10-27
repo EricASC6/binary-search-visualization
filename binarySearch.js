@@ -59,6 +59,15 @@ const search = target => {
 
       if (midNum === key) {
         // console.log(`Found ${key} at index ${mid}`);
+        let foundElem = array[mid];
+        foundElem.style.border = `3px inset #5edfff`;
+
+        let end = document.createElement("div");
+        end.innerHTML = `<h2>Found <span class="accent">${key}</span> at index <span class="accent">${mid}</span><h2>`;
+        end.style.position = "absolute";
+        end.className = "found";
+        document.querySelector(".array").appendChild(end);
+
         return;
       }
 

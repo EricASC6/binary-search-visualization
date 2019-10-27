@@ -38,7 +38,7 @@ button {
   width: 100%;
 }
 
-.header .accent {
+.accent {
   color: var(--sky);
 }
 
@@ -120,33 +120,45 @@ button {
 }
 
 .buttons .search-bar {
-  /* border: 2px solid black; */
+  border: 3px solid var(--dark);
   position: relative;
-  border-radius: 40px;
+  width: auto;
+  border-radius: 30px;
 }
 
 .buttons .search-bar #target {
-  display: inline-block;
   height: 55px;
   font-size: 20px;
   border-radius: 40px;
   border: none;
   outline: none;
-  width: 150px;
-  z-index: -1;
-  opacity: 0;
+  width: 100px;
+  padding-left: 10px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .buttons .search-bar #search-btn {
+  display: inline-block;
   background-color: var(--dark);
   font-size: 18px;
   color: #eeeeee;
-  border-radius: 3px;
-  position: absolute;
-  top: 2px;
-  left: 45px;
+  border-radius: 50%;
   border: none;
   transition: all 0.2s ease-in;
+  margin-right: 3px;
+  margin-top: 4px;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+}
+
+.buttons .search-bar #search-btn:hover {
+  color: var(--sky);
+}
+
+.buttons .search-bar #search-btn:active {
+  background-color: #232e3d;
 }
 
 /* Array element styling */
@@ -165,6 +177,7 @@ button {
   margin: 0 10px;
   position: relative;
   font-weight: 700;
+  transition: 2s;
 }
 
 .element::after {
@@ -199,4 +212,24 @@ button {
 #middle {
   color: #2b2b28;
   z-index: 1;
+}
+
+.found {
+  color: var(--dark);
+  top: 50px;
+  word-spacing: 5px;
+  opacity: 0;
+  animation-duration: 1.4s;
+  animation-name: appear;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
