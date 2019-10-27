@@ -7,6 +7,7 @@
   --tur: #66fcf1;
   --darkTur: #27c1b9;
   --blue: linear-gradient(135deg, #54b0f1 10%, #0396ff 100%);
+  --sky: #00bbf0;
 }
 
 * {
@@ -38,7 +39,7 @@ button {
 }
 
 .header .accent {
-  color: #00bbf0;
+  color: var(--sky);
 }
 
 .visualizer {
@@ -65,16 +66,14 @@ button {
   position: absolute;
   content: "";
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
     ),
-    url(http://www.pngmart.com/files/9/Magnifying-Glass-PNG-Clipart.png);
+    url(http://cdn.onlinewebfonts.com/svg/img_491257.png);
   background-size: 350px 350px;
   background-repeat: no-repeat;
   width: 350px;
   height: 350px;
-  top: 30px;
-  left: 25px;
 }
 
 .array::after {
@@ -99,34 +98,55 @@ button {
 
 .buttons .generate-array #generate {
   font-size: 18px;
-  color: var(--dark);
   border-radius: 3px;
-  /* border: 2px solid var(--darkTur); */
+  background-color: var(--dark);
   border: none;
   margin-right: 20px;
+  color: #eeeeee;
+  transition: 0.2s all ease-in;
+}
+
+.sky {
+  color: #eeeeee;
+  transition: 0.2s all ease-in;
+}
+
+.buttons .generate-array #generate:hover .sky {
+  color: var(--sky);
+}
+
+.buttons .generate-array #generate:hover {
+  color: #eeeeee;
+}
+
+.buttons .search-bar {
+  /* border: 2px solid black; */
+  position: relative;
+  border-radius: 40px;
 }
 
 .buttons .search-bar #target {
+  display: inline-block;
   height: 55px;
   font-size: 20px;
   border-radius: 40px;
   border: none;
   outline: none;
-  padding: 0 15px;
   width: 150px;
-  padding-right: 55px;
+  z-index: -1;
+  opacity: 0;
 }
 
 .buttons .search-bar #search-btn {
   background-color: var(--dark);
   font-size: 18px;
-  color: var(--tur);
-  border-radius: 40px;
-  height: 45px;
-  width: 45px;
-  padding: 0;
-  position: relative;
-  right: 55px;
+  color: #eeeeee;
+  border-radius: 3px;
+  position: absolute;
+  top: 2px;
+  left: 45px;
+  border: none;
+  transition: all 0.2s ease-in;
 }
 
 /* Array element styling */
@@ -134,7 +154,7 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-image: linear-gradient(135deg, #2afadf 10%, #4c83ff 100%);
+  background-color: var(--dark);
   color: #eeeeee;
   font-size: 16px;
   display: inline-block;
@@ -144,7 +164,7 @@ button {
   justify-content: center;
   margin: 0 10px;
   position: relative;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .element::after {
@@ -154,7 +174,7 @@ button {
   content: counter(elem);
   z-index: 1;
   bottom: -25px;
-  color: var(--dark);
+  color: var(--sky);
   font-weight: 700;
 }
 
@@ -169,14 +189,14 @@ button {
 }
 
 #low {
-  color: #222831;
+  color: #f2cc90;
 }
 
 #high {
-  color: #00bbf0;
+  color: #e3b04b;
 }
 
 #middle {
-  color: #005792;
+  color: #2b2b28;
   z-index: 1;
 }
